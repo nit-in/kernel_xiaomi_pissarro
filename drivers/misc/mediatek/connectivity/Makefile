@@ -58,25 +58,29 @@ endif
         export WIFI_IP_SET=1
         export MTK_WLAN_SERVICE=yes
         export CONNAC_VER=2_0
-        export CFG_BUILD_CONNAC2=true
+        
+
         # Do build-in for xxx.c checking
         subdir-ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
         subdir-ccflags-y += -D MTK_WCN_BUILT_IN_DRIVER
         obj-y += conninfra/
         obj-y += wlan/adaptor/
         obj-y += wlan/core/gen4m/
+	
+# FMRadio
+ export CFG_BUILD_CONNAC2=true
+ export CFG_FM_CHIP=mt6635
+ obj-$(CONFIG_MTK_FMRADIO) += fmradio/
 
-    endif
+    
 
 # Bluetooth MT6877
-obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/btif/
-export _MTK_BT_CHIP=MTK_CONSYS_MT6877
-
-# FMRadio
-obj-$(CONFIG_MTK_FMRADIO) += fmradio/
+ obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/btif/
+ export _MTK_BT_CHIP=MTK_CONSYS_MT6877
 
 # GPS
-obj-$(CONFIG_MTK_COMBO_GPS) += gps/
+ obj-$(CONFIG_MTK_COMBO_GPS) += gps/
+endif
 
 # Otherwise we were called directly from the command line;
 # invoke the kernel build system.
