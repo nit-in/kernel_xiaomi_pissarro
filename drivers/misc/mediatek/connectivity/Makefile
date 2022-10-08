@@ -77,6 +77,10 @@ endif
 
     endif
 
+# Bluetooth MT6877
+obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/btif/
+export _MTK_BT_CHIP=MTK_CONSYS_MT6877
+
 # Otherwise we were called directly from the command line;
 # invoke the kernel build system.
 else
