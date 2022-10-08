@@ -50,28 +50,19 @@ endif
 
         # for gen4m options
         export CONFIG_MTK_COMBO_WIFI_HIF=axi
+        export MTK_COMBO_CHIP=CONNAC2X2_SOC5_0
+        export BT_PLATFORM=6877
         export WLAN_CHIP_ID=6877
         export MTK_ANDROID_WMT=y
         export MTK_ANDROID_EMI=y
-
-        WLAN_IP_SET_1_SERIES := 6765 6761 6885 6893
-        WLAN_IP_SET_2_SERIES := 3967 6785
-        WLAN_IP_SET_3_SERIES := 6779 6873 6853
-        ifneq ($(filter $(WLAN_IP_SET_3_SERIES), $(WLAN_CHIP_ID)),)
-            $(info WIFI_IP_SET is 3)
-            export WIFI_IP_SET=3
-        else ifneq ($(filter $(WLAN_IP_SET_2_SERIES), $(WLAN_CHIP_ID)),)
-            $(info WIFI_IP_SET is 2)
-            export WIFI_IP_SET=2
-        else
-            $(info WIFI_IP_SET is 1)
-            export WIFI_IP_SET=1
-        endif
-
+        export WIFI_IP_SET=1
+        export MTK_WLAN_SERVICE=yes
+        export CONNAC_VER=2_0
+        export CFG_BUILD_CONNAC2=true
         # Do build-in for xxx.c checking
         subdir-ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
         subdir-ccflags-y += -D MTK_WCN_BUILT_IN_DRIVER
-        obj-y += common/
+        obj-y += conninfra/
         obj-y += wlan/adaptor/
         obj-y += wlan/core/gen4m/
 
