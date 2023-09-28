@@ -496,9 +496,9 @@ uint32_t wlanSendPhyAction(struct ADAPTER *prAdapter,
 	}
 
 	/* Get data from connfem_api */
-	connfem_epaelna_get_fem_info(&fem_info);
-	connfem_epaelna_get_pin_info(&pin_info);
-	connfem_epaelna_laa_get_pin_info(&laa_pin_info);
+	//connfem_epaelna_get_fem_info(&fem_info);
+	//connfem_epaelna_get_pin_info(&pin_info);
+	//connfem_epaelna_laa_get_pin_info(&laa_pin_info);
 
 	/* 1. Allocate CMD Info Packet and its Buffer. */
 	if (u2Tag == HAL_PHY_ACTION_TAG_NVRAM) {

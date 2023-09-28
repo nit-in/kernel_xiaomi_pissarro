@@ -58,7 +58,7 @@ endif
         export WIFI_IP_SET=1
         export MTK_WLAN_SERVICE=yes
         export CONNAC_VER=2_0
-        
+        export TARGET_BUILD_VARIANT=user
 
         # Do build-in for xxx.c checking
         subdir-ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
@@ -76,8 +76,8 @@ endif
 
 # Bluetooth MT6877
  obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/btif/
- export _MTK_BT_CHIP=MTK_CONSYS_MT6877
-
+# export _MTK_BT_CHIP=MTK_CONSYS_MT6877
+obj-y += connfem/
 # GPS
  obj-$(CONFIG_MTK_COMBO_GPS) += gps/
 endif
