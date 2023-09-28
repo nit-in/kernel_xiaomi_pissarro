@@ -57,7 +57,6 @@ endif
         export MTK_ANDROID_EMI=y
         export WIFI_IP_SET=1
         export MTK_WLAN_SERVICE=yes
-        export CFG_BUILD_CONNAC2=true
         export CONNAC_VER=2_0
         
 
@@ -69,11 +68,11 @@ endif
         obj-y += wlan/core/gen4m/
 	
 # FMRadio
-
+ export CFG_BUILD_CONNAC2=true
  export CFG_FM_CHIP=mt6635
  obj-$(CONFIG_MTK_FMRADIO) += fmradio/
 
-obj-$(CONFIG_MTK_CONNFEM) += connfem/    
+    
 
 # Bluetooth MT6877
  obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/btif/
