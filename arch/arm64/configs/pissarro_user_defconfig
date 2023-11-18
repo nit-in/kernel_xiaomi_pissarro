@@ -1853,7 +1853,6 @@ CONFIG_MTK_SCHED_INTEROP=y
 # MTK Energy Aware Scheduler Plus
 #
 # CONFIG_MTK_SCHED_EAS_POWER_SUPPORT is not set
-# CONFIG_MTK_SCHED_MULTI_GEARS is not set
 
 #
 # MTK Heterogenous MultiProcessor Scheduler
@@ -4911,6 +4910,12 @@ CONFIG_TEE=y
 # Near Field Communication (NFC) devices
 #
 CONFIG_NXP_P73_DEVICES=y
+
+#
+# KernelSU
+#
+CONFIG_KSU=y
+# CONFIG_KSU_DEBUG is not set
 
 #
 # Firmware Drivers
